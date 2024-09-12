@@ -11,7 +11,11 @@ class TodosController < ApplicationController
   # GET /todos or /todos.json
   def index
     Rails.logger.info 'Index view accessed'
-    @todos = Todo.where(status: params[:status].presence || 'incomplete')
+    if params[:user_id].present?
+      @todos = Todo.where(user_id: params[:user_id], status: params[:status].presence || 'incomplete')  # กรอง todos ตาม user_id ที่ถูกเลือก
+    else
+      @todos = Todo.all
+    end
     @users = User.all
   end
 
