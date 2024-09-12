@@ -5,7 +5,7 @@
       <div class="my-5">
         <label for="user_dropdown" class="font-medium">Select User</label>
         <!-- Dropdown ที่เลือก user -->
-        <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :username, params[:user_id]), prompt: "Select a user", class: "shadow rounded-md border border-gray-300 outline-none px-3 py-2 mt-2 w-full bg-transparent hover:border-blue-600", onchange: "this.form.requestSubmit();" %>
+        <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :username, params[:user_id] ), class: "shadow rounded-md border border-gray-300 outline-none px-3 py-2 mt-2 w-full bg-transparent hover:border-blue-600", onchange: "this.form.requestSubmit();" %>
       </div>
     <% end %>
 
