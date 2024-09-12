@@ -19,4 +19,13 @@
     </div>
   </div>
 
+  <% if todo.persisted? %>
+    <div class="my-5">
+      <%= form.label :due_at, "Due Date", class: 'font-medium' %>
+      <%= form.text_field :due_date, type: "datetime-local", class: "shadow rounded-md border border-gray-300 outline-none px-3 py-2 mt-2 w-full bg-transparent hover:border-blue-600" %>
+    </div>
+
+  <% end %>
+
+
 <% end %>

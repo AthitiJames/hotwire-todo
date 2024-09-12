@@ -1,20 +1,23 @@
 name: hotwire-todo-compose
 services:
-  web:
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      - SECRET_KEY_BASE=dummy
-      - DATABASE_URL=postgres://hotwire_todo:postgres@db:5432/hotwire_todo
-    volumes:
-      - .:/myapp
-    ports:
-      - "3000:3000"
-    networks:
-      - database
-    depends_on:
-      - db
+  # web:
+  #   build: 
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     - SECRET_KEY_BASE=dummy
+  #     - DATABASE_URL=postgres://hotwire_todo:postgres@db:5432/hotwire_todo
+  #     - POSTGRES_USER=hotwire_todo
+  #     - POSTGRES_PASS=WORD=postgres
+  #     - POSTGRES_HOST=db
+  #   volumes:
+  #     - .:/myapp
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - database
+  #   depends_on:
+  #     - db
 
   db:
     image: postgres:14

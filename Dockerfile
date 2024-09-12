@@ -52,6 +52,8 @@ RUN apk add --no-cache \
 COPY --from=build /myapp /myapp/
 COPY --from=build /usr/local/bundle /usr/local/bundle
 
+RUN /bin/sh -c bin/rails tailwind:install
+
 # Set environment variables
 ENV RAILS_ENV=production
 
