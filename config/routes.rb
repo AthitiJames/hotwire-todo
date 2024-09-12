@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "users/new"
+  get "users/create"
   resources :todos do
     collection do
       delete 'destroy_all'

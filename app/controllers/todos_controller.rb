@@ -12,6 +12,7 @@ class TodosController < ApplicationController
   def index
     Rails.logger.info 'Index view accessed'
     @todos = Todo.where(status: params[:status].presence || 'incomplete')
+    @users = User.all
   end
 
   # GET /todos/1 or /todos/1.json
