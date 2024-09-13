@@ -6,7 +6,8 @@ class DueDateCheckerJob < ApplicationJob
     todos_due_today = Todo.where(due_date: Time.current.beginning_of_day..Time.current.end_of_day)
 
     todos_due_today.each do |todo|
-      user = todo.user  # ตอนนี้สามารถเรียก user จาก todo ได้แล้ว
+      user_id = todo.user_id
+      user = User.find(user_id)
       UserMailer.due_date_email(user, todo).deliver_now  # ส่งอีเมลแจ้งเตือน
     end
   end
