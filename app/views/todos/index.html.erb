@@ -16,13 +16,13 @@
         <ul class="flex space-x-2 justify-center">
           <li>
             <%= link_to "Incomplete",
-              todos_path(status: "incomplete"),
+              todos_path(status: "incomplete", user_id: params[:user_id]),
               class: "inline-block pb-2 px-4 text-sm font-medium text-center text-gray-500 border-b-2 hover:text-gray-600 #{ params[:status] != 'complete' ? 'border-blue-600' : 'border-transparent hover:border-gray-300'}"
             %>
           </li>
           <li>
             <%= link_to "Complete",
-              todos_path(status: "complete"),
+              todos_path(status: "complete", user_id: params[:user_id]),
               class: "inline-block pb-2 px-4 text-sm font-medium text-center text-gray-500 border-b-2 hover:text-gray-600 #{ params[:status] == 'complete' ? 'border-blue-600' : 'border-transparent hover:border-gray-300'}"
             %>
           </li>
