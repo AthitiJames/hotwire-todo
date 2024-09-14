@@ -1,4 +1,6 @@
 <div class="w-full">
+  <%= turbo_stream_from 'todos' %>
+
   <%= turbo_frame_tag "todos_frame" do %>
     <%= form_with(url: todos_path, method: :get, local: false) do %>
       <div class="my-5">
